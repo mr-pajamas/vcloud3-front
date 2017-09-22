@@ -1,0 +1,32 @@
+html {
+  .size(100%; 100%);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: #eeeeeb;
+}
+
+.container-fluid {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @media (min-width: @screen-sm-min) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media (min-width: @screen-md-min) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media (min-width: @screen-lg-min) {
+    padding-left: 1.8%;
+    padding-right: 1.8%;
+  }
+}

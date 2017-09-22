@@ -1,0 +1,33 @@
+.nav-box {
+  position: absolute;
+  top: @navbar-lg-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 600px;
+
+  .nav {
+    .size(100%, 100%);
+    display: table;
+    table-layout: fixed;
+
+    > li {
+      .size(100%, 100%);
+
+      > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        border-radius: 0;
+
+        > * {
+          .vertical-center();
+          .center-block();
+        }
+      }
+    }
+  }
+}

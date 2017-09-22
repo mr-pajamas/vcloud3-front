@@ -1,0 +1,44 @@
+@navbar-lg-height: 60px;
+
+/*
+body {
+  padding-top: @navbar-height + 1;
+
+  @media (min-width: @screen-sm-min) {
+    padding-top: @navbar-lg-height + 1;
+  }
+}
+*/
+
+.navbar {
+  min-height: @navbar-height;
+  margin-bottom: 0;
+
+  @media (min-width: @screen-sm-min) {
+    min-height: @navbar-lg-height;
+
+    .navbar-header {
+      float: none;
+
+      > * {
+        margin: 0 !important;
+      }
+
+      .dropdown .navbar-btn {
+        height: 40px;
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 8px 14px;
+        margin: 10px 0;
+      }
+
+      .navbar-brand {
+        height: @navbar-lg-height;
+        font-size: 24px;
+        line-height: 24px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+    }
+  }
+}
