@@ -4,13 +4,15 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
+import '../../ui/layouts/layout.js';
+
 BlazeLayout.setRoot("body");
 
 FlowRouter.route('/', {
   name: 'home',
   action() {
     import "../../ui/pages/home.js";
-    BlazeLayout.render('home');
+    BlazeLayout.render('layout', {mainContent: 'home'});
   },
 });
 
