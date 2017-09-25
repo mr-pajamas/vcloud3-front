@@ -1,31 +1,32 @@
-.nav-box {
-  position: absolute;
-  top: @navbar-lg-height;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  min-height: 600px;
+.home-nav {
+  .size(100%, 100%);
 
-  .nav {
-    .size(100%, 100%);
-    display: table;
-    table-layout: fixed;
+  > li {
+    .size(100% / 7, 100%);
+    margin: 0 !important;
 
-    > li {
+    > a {
+      border-radius: 0;
       .size(100%, 100%);
 
-      > a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+      > * {
+        .vertical-center();
+        top: 45%;
+        .center-block();
         text-align: center;
-        border-radius: 0;
 
-        > * {
-          .vertical-center();
-          .center-block();
+        img {
+          margin-bottom: 2em;
+          /*width: 62%;*/
+        }
+
+        h4 {
+          &:nth-of-type(1) {
+            color: #333;
+          }
+          &:nth-of-type(2) {
+            color: #fff;
+          }
         }
       }
     }

@@ -1,5 +1,5 @@
 @navbar-lg-height: 60px;
-
+@navbar-lg-brand-img-height: 48px;
 /*
 body {
   padding-top: @navbar-height + 1;
@@ -34,10 +34,19 @@ header .navbar {
 
       .navbar-brand {
         height: @navbar-lg-height;
+        /*
         font-size: 24px;
         line-height: 24px;
         padding-top: 18px;
         padding-bottom: 18px;
+        */
+        padding-left: 0;
+        padding-top: floor((@navbar-lg-height - @navbar-lg-brand-img-height) / 2);
+        padding-bottom: ceil((@navbar-lg-height - @navbar-lg-brand-img-height) / 2);
+
+        img {
+          height: @navbar-lg-brand-img-height;
+        }
       }
     }
   }

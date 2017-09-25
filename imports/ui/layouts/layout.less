@@ -33,9 +33,13 @@ body {
 
 main {
   position: absolute;
-  top: 100%;
   bottom: 0;
   left: 0;
   right: 0;
   min-height: 600px;
+  overflow: hidden;
+
+  @media (min-width: @screen-sm-min) {
+    top: @navbar-lg-height + 1px;
+  }
 }
