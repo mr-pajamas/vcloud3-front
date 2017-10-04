@@ -23,4 +23,4 @@ Template.hello.events({
 });
 */
 
-import '/imports/startup/client';
+import '../imports/startup/client';

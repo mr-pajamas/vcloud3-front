@@ -6,19 +6,21 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 import '../../ui/layouts/layout.js';
 
-BlazeLayout.setRoot("body");
+BlazeLayout.setRoot('body');
 
 FlowRouter.route('/', {
   name: 'home',
   action() {
-    import "../../ui/pages/home.js";
-    BlazeLayout.render('layout', {mainContent: 'home'});
+    import '../../ui/pages/home.js';
+
+    BlazeLayout.render('layout', { mainContent: 'home' });
   },
 });
 
 FlowRouter.notFound = {
   action() {
-    import "../../ui/pages/not-found.js";
+    import '../../ui/pages/not-found.js';
+
     BlazeLayout.render('notFound');
   },
 };

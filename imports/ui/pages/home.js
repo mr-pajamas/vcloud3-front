@@ -5,17 +5,16 @@ import { Template } from 'meteor/templating';
 // import Masonry from 'masonry-layout';
 // import Holder from 'holderjs';
 
-//import '../layouts/header.js';
+// import '../layouts/header.js';
 // import '../layouts/footer.js';
 // import '../components/item-card.html';
 // import '../components/pagination.js';
 import './home.html';
 
 Template.home.onRendered(() => {
+  // const template = this;
 
-  const template = this;
-
-  //Holder.run();
+  // Holder.run();
 
   /*
   new Masonry( '.grid', {
@@ -24,5 +23,5 @@ Template.home.onRendered(() => {
     percentPosition: true,
   });
   */
-  //console.log($('.grid'));
+  // console.log($('.grid'));
 });
