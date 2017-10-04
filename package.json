@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent"
   },
   "dependencies": {
     "babel-runtime": "^6.20.0",
@@ -14,6 +15,7 @@
     "masonry-layout": "^4.2.0"
   },
   "devDependencies": {
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
     "autoprefixer": "^7.1.1",
     "babel-eslint": "^8.0.1",
     "eslint": "^4.8.0",
@@ -32,5 +34,8 @@
         ]
       }
     }
+  },
+  "eslintConfig": {
+    "extends": "@meteorjs/eslint-config-meteor"
   }
 }
