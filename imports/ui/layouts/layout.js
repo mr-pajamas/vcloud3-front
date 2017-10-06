@@ -5,4 +5,5 @@
 // import { Template } from 'meteor/templating';
 
 import './header.js';
+import './nav.js';
 import './layout.html';

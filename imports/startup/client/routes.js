@@ -11,9 +11,9 @@ BlazeLayout.setRoot('body');
 FlowRouter.route('/', {
   name: 'home',
   action() {
-    import '../../ui/pages/home.js';
+    // import '../../ui/pages/home.js';
 
-    BlazeLayout.render('layout', { mainContent: 'home' });
+    BlazeLayout.render('layout');
   },
 });
 
@@ -21,6 +21,6 @@ FlowRouter.notFound = {
   action() {
     import '../../ui/pages/not-found.js';
 
-    BlazeLayout.render('notFound');
+    BlazeLayout.render('layout', { mainContent: 'notFound' });
   },
 };

@@ -1,21 +1,42 @@
 @navbar-lg-height: 60px;
-@navbar-lg-brand-img-height: 48px;
-/*
-body {
-  padding-top: @navbar-height + 1;
-
-  @media (min-width: @screen-sm-min) {
-    padding-top: @navbar-lg-height + 1;
-  }
-}
-*/
+@navbar-lg-brand-img-height: 42px;
 
 header .navbar {
   min-height: @navbar-height;
   margin-bottom: 0;
 
+  &.in {
+    @keyframes fallFromTop {
+      0% {
+        .translate(0, -100%);
+      }
+
+      100% {
+        .translate(0, 0);
+      }
+    }
+    .animation-name(fadeIn, fallFromTop;);
+    .animated(.3s, .7s);
+  }
+
+  &.out {
+    @keyframes riseToTop {
+      0% {
+        .translate(0, 0);
+      }
+
+      100% {
+        .translate(0, -100%);
+      }
+    }
+    .animation-name(fadeOut, riseToTop;);
+    .animated(.3s, .7s);
+
+  }
+
   @media (min-width: @screen-sm-min) {
     min-height: @navbar-lg-height;
+    .position(absolute; auto; 0);
 
     .navbar-header {
       float: none;

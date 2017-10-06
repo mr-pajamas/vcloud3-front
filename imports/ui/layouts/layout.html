@@ -1,7 +1,11 @@
 <template name="layout">
   {{> header}}
 
+  {{> nav}}
+
   <main>
-    {{> Template.dynamic template=mainContent}}
+    {{#if mainContent}}
+      {{> Template.dynamic template=mainContent}}
+    {{/if}}
   </main>
 </template>
