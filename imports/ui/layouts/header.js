@@ -6,11 +6,11 @@ import { Session } from 'meteor/session';
 
 import './header.html';
 
-Template.header.onCreated(() => {
+Template.header.onCreated(function () {
 
 });
 
-Template.header.onRendered(() => {
+Template.header.onRendered(function () {
   // TODO: temporary use of session
   Session.set('showHeader', true);
 });
