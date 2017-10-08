@@ -26,5 +26,6 @@ arillo:flow-router-helpers
 zimme:active-route
 dynamic-import@0.1.3
 juliancwirko:postcss
+percolate:velocityjs
 percolate:momentum
 session
