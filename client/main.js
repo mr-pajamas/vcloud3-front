@@ -27,4 +27,4 @@ import { $ } from 'meteor/jquery';
 
 import '/imports/startup/client';
 
-$.Velocity.mock = 10;
+$.Velocity.mock = 6;

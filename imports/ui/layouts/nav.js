@@ -14,6 +14,10 @@ import { _ } from 'underscore';
 // import '../components/pagination.js';
 import './nav.html';
 
+Template.nav.onCreated(function () {
+
+});
+
 Template.nav.onRendered(function () {
   const template = this;
 
@@ -29,19 +33,31 @@ Template.nav.onRendered(function () {
   // console.log($('.grid'));
   const $element = template.$('.home-nav');
 
+  /*
+   * 状态：
+   * 1. UP(col)
+   * 2. DOWN(blur)
+   */
+  // template.visualState = { up: { except: null } };
+  template.visualState = { down: { blurred: false } };
+
   const transitions = {
     home() {
-      $element.trigger('transit.vc3');
-      $element.velocity({ height: '100%' }, {
-        complete() {
-          $element.trigger('transited.vc3');
-        },
-      });
+      if (!template.visualState.down || template.visualState.down.blurred) {
+        $element.trigger('transit.vc3');
+        $element.velocity({ height: '100%' }, {
+          complete() {
+            template.visualState = { down: { blurred: false } };
+            $element.trigger('transited.vc3');
+          },
+        });
+      }
     },
     homeaa() {
       $element.trigger('transit.vc3');
       $element.velocity({ height: '81px' }, {
         complete() {
+          template.visualState = { up: { except: null } };
           $element.trigger('transited.vc3');
         },
       });
