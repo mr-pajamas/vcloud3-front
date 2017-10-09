@@ -4,6 +4,7 @@
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { $ } from 'meteor/jquery';
+import { _ } from 'underscore';
 // import Masonry from 'masonry-layout';
 // import Holder from 'holderjs';
 
@@ -26,9 +27,29 @@ Template.nav.onRendered(function () {
   });
   */
   // console.log($('.grid'));
+  const $element = template.$('.home-nav');
+
+  const transitions = {
+    home() {
+      $element.trigger('transit.vc3');
+      $element.velocity({ height: '100%' }, {
+        complete() {
+          $element.trigger('transited.vc3');
+        },
+      });
+    },
+    homeaa() {
+      $element.trigger('transit.vc3');
+      $element.velocity({ height: '81px' }, {
+        complete() {
+          $element.trigger('transited.vc3');
+        },
+      });
+    },
+  };
 
   template.autorun(() => {
-    let routeName = FlowRouter.getRouteName();
+    const routeName = FlowRouter.getRouteName();
 
     /*
      * 1. 登录后到首页，与具体页面回到首页，效果不同
@@ -41,11 +62,11 @@ Template.nav.onRendered(function () {
      *    第三种，具体导航页面，收起，当前导航不动。可以去其他三种状态
      *    第四种，个人页面，全部收起。可以去登录页和首页
      */
-    $.Velocity.animate(template.$('.home-nav').get(), { opacity: 0.5 })
-      .then(() => console.log('resolved'));
+    /*
+    template.$('.home-nav').velocity({ opacity: 0.5 }, 5000, function () {
+      console.log('resolved');
+    });
+    */
+    _.isFunction(transitions[routeName]) && transitions[routeName]();
   });
 });
-
-const transitions = {
-
-};

@@ -40,3 +40,11 @@ main {
     padding-top: @navbar-lg-height + 1px + 20px;
   }
 }
+
+.disabler {
+  .position(fixed, 0, 0);
+  display: none;
+  z-index: 9999;
+  background-color: transparent;
+  .opacity(0);
+}

@@ -10,7 +10,9 @@ import '../../ui/layouts/layout.js';
 BlazeLayout.setRoot('body');
 
 FlowRouter.previous = _.constant(undefined);
-FlowRouter.triggers.exit([(context) => FlowRouter.previous = _.constant(context)]);
+FlowRouter.triggers.exit([(context) => {
+  FlowRouter.previous = _.constant(context);
+}]);
 
 FlowRouter.route('/', {
   name: 'home',
