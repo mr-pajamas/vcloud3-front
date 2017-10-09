@@ -1,0 +1,50 @@
+html {
+  .size(100%; 100%);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  .size(100%; 100%);
+  min-height: 600px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: #eeeeeb;
+}
+
+.container-fluid {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @media (min-width: @screen-sm-min) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media (min-width: @screen-md-min) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media (min-width: @screen-lg-min) {
+    padding-left: 1.8%;
+    padding-right: 1.8%;
+  }
+}
+
+main {
+  .size(100%; 100%);
+  padding-top: @navbar-height + 1px + 15px;
+  overflow: hidden;
+
+  @media (min-width: @screen-sm-min) {
+    padding-top: @navbar-lg-height + 1px + 20px;
+  }
+}
+
+.disabler {
+  .position(fixed, 0, 0);
+  display: none;
+  z-index: 9999;
+  background-color: transparent;
+  .opacity(0);
+}

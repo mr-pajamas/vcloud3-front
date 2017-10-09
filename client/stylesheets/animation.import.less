@@ -1,0 +1,28 @@
+@animation-default-delay: .3s;
+@animation-default-duration: .5s;
+
+.animated(@delay: @animation-default-delay; @duration: @animation-default-duration) {
+  .animation-fill-mode(both);
+  .animation-delay(@delay);
+  .animation-duration(@duration);
+}
+
+@keyframes fadeIn {
+  0% {.opacity(0);}
+  100% {.opacity(1);}
+}
+
+@keyframes fadeOut {
+  0% {.opacity(1);}
+  100% {.opacity(0);}
+}
+
+.fadeIn(@delay: @animation-default-delay; @duration: @animation-default-duration) {
+  .animated(@delay, @duration);
+  .animation-name(fadeIn);
+}
+
+.fadeOut(@delay: @animation-default-delay; @duration: @animation-default-duration) {
+  .animated(@delay, @duration);
+  .animation-name(fadeOut);
+}
