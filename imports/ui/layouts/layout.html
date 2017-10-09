@@ -1,0 +1,13 @@
+<template name="layout">
+  <div class="disabler"></div>
+
+  {{> header}}
+
+  {{> nav}}
+
+  <main>
+    {{#if mainContent}}
+      {{> Template.dynamic template=mainContent}}
+    {{/if}}
+  </main>
+</template>
