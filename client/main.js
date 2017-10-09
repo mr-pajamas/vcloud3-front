@@ -23,4 +23,8 @@ Template.hello.events({
 });
 */
 
+import { $ } from 'meteor/jquery';
+
 import '/imports/startup/client';
+
+$.Velocity.mock = 10;
